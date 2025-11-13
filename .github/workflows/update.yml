@@ -15,19 +15,19 @@ jobs:
 
     - name: Set up Git
       run: |
-        git config user.name "liuyie"
-        git config user.email "314673846@qq.com"
+        git config user.name "liuyie"  # 替换为你的 GitHub 用户名
+        git config user.email "314673846@qq.com"  # 替换为你的 GitHub 邮箱
 
     - name: Add upstream repository
       run: |
         git remote add upstream https://github.com/NginxProxyManager/nginx-proxy-manager.git
         git fetch upstream
 
-    - name: Merge upstream releases into the fork
+    - name: Merge upstream develop branch into the fork
       run: |
-        git checkout main
-        git merge upstream/main
+        git checkout develop  # 切换到你的仓库中的 develop 分支
+        git merge upstream/develop  # 合并上游仓库的 develop 分支
 
     - name: Push changes to the fork
       run: |
-        git push origin main
+        git push origin develop  # 将合并的更改推送到你的仓库
