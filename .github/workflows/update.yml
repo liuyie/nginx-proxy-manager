@@ -26,7 +26,7 @@ jobs:
     - name: Merge upstream develop branch into the fork
       run: |
         git checkout develop  # 切换到你的仓库中的 develop 分支
-        git merge upstream/develop  # 合并上游仓库的 develop 分支
+        git merge upstream/develop --allow-unrelated-histories  # 强制合并不同历史的分支, 合并上游仓库的 develop 分支
 
     - name: Push changes to the fork
       run: |
